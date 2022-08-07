@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@500;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(0, 0%, 98%);
+  font-size: 18px;
+  font-family: 'Epilogue', sans-serif;
+}
+
+a:hover {
+  color: #000;
+  font-weight: bold;
+}
+
+.login-nav {
+  display: flex;
+  justify-content: center;
+}
+
+.reg-btn {
+  border-radius: 15px;
+  width: 125%;
+  margin-left: 20px;
+  border: 2px solid;
+}
+
+.reg-btn:hover {
+  background-color: #fff;
+  border-color: #000;
+  color: #000;
+}
+
+.logo-img {
+  margin: auto 30px;
+}
+
+section {
+  padding: 50px 100px;
+}
+
+.title {
+  margin: auto;
+  padding: 40px;
+}
+
+.title h1 {
+  font-size: 5rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.title p {
+  width: 80%;
+  margin-bottom: 40px;
+}
+
+.partner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 90%;
+  margin-top: 40px;
+}
+
+.hero-section {
+  display: flex;
+  justify-content: center;
+}
+
+.hero-img {
+  max-width: 70%;
+  margin-bottom: 50px;
+}
+
+.attribution {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+@media only screen and (max-width: 1200px) {
+  
+  .hero-img {
+    max-width: 80%;
+  }
+
+  .title {
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+
+  .title h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+
+  }
+  
+  .title p {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  section {
+    padding: 0;
+  }
+
+  .reg-btn {
+    width: 50%;
+  }
+}
