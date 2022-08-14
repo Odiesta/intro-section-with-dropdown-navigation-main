@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Github](https://github.com/Odiesta/intro-section-with-dropdown-navigation-main)
+- Live Site URL: [Github Pages](https://github.com/Odiesta/intro-section-with-dropdown-navigation-main)
 
 ## My process
 I started first with the navigation part. I use many bootstrap class on navigation part and just get it to look just enough first. Next is the section part. I use bootstrap grid to layout the title and hero image. After the basic layout looks good, i started working on making it look good in different resolution. Then i add offcanvas navigation for mobile size.
