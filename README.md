@@ -1,93 +1,156 @@
-# Frontend Mentor - Intro section with dropdown navigation
+# Frontend Mentor - Intro section with dropdown navigation solution
 
-![Design preview for the Intro section with dropdown navigation coding challenge](./design/desktop-preview.jpg)
+This is a solution to the [Intro section with dropdown navigation challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/intro-section-with-dropdown-navigation-ryaPetHE5). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-## Welcome! 👋
+## Table of contents
 
-Thanks for checking out this front-end coding challenge.
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Continued development](#continued-development)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
 
-[Frontend Mentor](https://www.frontendmentor.io) challenges help you improve your coding skills by building realistic projects.
+## Overview
+I solve this challenge using HTML, CSS, and Bootstrap. I do this project to practice my skill on HTML, CSS, and Bootstrap. It takes about 3 weeks to complete. There's few times that i want to give up, but i just show up and do the challenge. There's so much that i learn from the process of working on this project.
 
-**To do this challenge, you need a basic understanding of HTML, CSS and JavaScript.**
+### The challenge
 
-## The challenge
-
-Your challenge is to build out this intro section with dropdown navigation and get it looking as close to the design as possible.
-
-You can use any tools you like to help you complete the challenge. So if you've got something you'd like to practice, feel free to give it a go.
-
-Your users should be able to:
+Users should be able to:
 
 - View the relevant dropdown menus on desktop and mobile when interacting with the navigation links
 - View the optimal layout for the content depending on their device's screen size
 - See hover states for all interactive elements on the page
 
-Want some support on the challenge? [Join our Slack community](https://www.frontendmentor.io/slack) and ask questions in the **#help** channel.
+### Screenshot
 
-## Where to find everything
+![](./intro-section-screenshot.png)
+![](./mobile-intro-section.png)
 
-Your task is to build out the project to the designs inside the `/design` folder. You will find both a mobile and a desktop version of the design. 
+### Links
 
-The designs are in JPG static format. Using JPGs will mean that you'll need to use your best judgment for styles such as `font-size`, `padding` and `margin`. 
+- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
 
-If you would like the design files (we provide Sketch & Figma versions) to inspect the design in more detail, you can [subscribe as a PRO member](https://www.frontendmentor.io/pro).
+## My process
+I started first with the navigation part. I use many bootstrap class on navigation part and just get it to look just enough first. Next is the section part. I use bootstrap grid to layout the title and hero image. After the basic layout looks good, i started working on making it look good in different resolution. Then i add offcanvas navigation for mobile size.
 
-You will find all the required assets in the `/images` folder. The assets are already optimized.
+### Built with
 
-There is also a `style-guide.md` file containing the information you'll need, such as color palette and fonts.
+- Semantic HTML5 markup
+- CSS
+- Flexbox
+- Bootstrap
 
-## Building your project
+### What I learned
 
-Feel free to use any workflow that you feel comfortable with. Below is a suggested process, but do not feel like you need to follow these steps:
+- Choosing different images based on different resolution using picture and source tag.
 
-1. Initialize your project as a public repository on [GitHub](https://github.com/). Creating a repo will make it easier to share your code with the community if you need help. If you're not sure how to do this, [have a read-through of this Try Git resource](https://try.github.io/).
-2. Configure your repository to publish your code to a web address. This will also be useful if you need some help during a challenge as you can share the URL for your project with your repo URL. There are a number of ways to do this, and we provide some recommendations below.
-3. Look through the designs to start planning out how you'll tackle the project. This step is crucial to help you think ahead for CSS classes to create reusable styles.
-4. Before adding any styles, structure your content with HTML. Writing your HTML first can help focus your attention on creating well-structured content.
-5. Write out the base styles for your project, including general content styles, such as `font-family` and `font-size`.
-6. Start adding styles to the top of the page and work down. Only move on to the next section once you're happy you've completed the area you're working on.
+```html
+<picture class="hero-section">
+  <source srcset="images/image-hero-desktop.png" media="(min-width: 768px)" class="hero-img">
+  <source srcset="images/image-hero-mobile.png" media="(max-width: 768px)">
+  <img src="images/image-hero-desktop.png" alt="default image" class="hero-img">
+</picture>
+```
+using this tag first time is not working. Then i found that img tag must be present at picture and it solved the problem
 
-## Deploying your project
+- using bootstrap for responsive behavior
 
-As mentioned above, there are many ways to host your project for free. Our recommend hosts are:
+i struggle to layout the navigation part. i found bootstrap grid able to layout content horizontally. This is how i do it
 
-- [GitHub Pages](https://pages.github.com/)
-- [Vercel](https://vercel.com/)
-- [Netlify](https://www.netlify.com/)
+```html
+<ul class="navbar-nav col-lg-9">
+</ul>
+```
+To get the login and register separate from main navigation i wrap it inside div and bootstrap col
 
-You can host your site using one of these solutions or any of our other trusted providers. [Read more about our recommended and trusted hosts](https://medium.com/frontend-mentor/frontend-mentor-trusted-hosting-providers-bf000dfebe).
+```html
+<div class="login-nav col-lg-3">
+  <ul class="navbar-nav">
+    <li class="nav-item mx-2">
+      <a href="#" class="nav-link">Login</a>
+    </li>
+  </ul>
+</div>
+```
 
-## Create a custom `README.md`
+- Using bootstrap spacing system
+Add quick margin by using bootstrap spacing
 
-We strongly recommend overwriting this `README.md` with a custom one. We've provided a template inside the [`README-template.md`](./README-template.md) file in this starter code.
+```html
+<li class="nav-item mx-2">
+```
+mx-2 class mean add margin to the left and right by .5rem
 
-The template provides a guide for what to add. A custom `README` will help you explain your project and reflect on your learnings. Please feel free to edit our template as much as you like.
+- Using bootstrap offcanvas
+to add offcanvas is as easy as adding offcanvas class to nav like below
 
-Once you've added your information to the template, delete this file and rename the `README-template.md` file to `README.md`. That will make it show up as your repository's README file.
+```html
+<button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navMenu" aria-controls="offcanvasNavbar" aria-expanded="false" aria-label="Offcanvas Navigation">
+  <span class="navbar-toggler-icon"></span>
+</button>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="navMenu" aria-labelledby="offcanvasNavbarLabel">
+</div>
+```
 
-## Submitting your solution
+- Create dropdown menu using Bootstrap
+To create dropdown just add dropdown-menu class to List
 
-Submit your solution on the platform for the rest of the community to see. Follow our ["Complete guide to submitting solutions"](https://medium.com/frontend-mentor/a-complete-guide-to-submitting-solutions-on-frontend-mentor-ac6384162248) for tips on how to do this.
+```html
+<ul class="dropdown-menu">
+  <li><a href="#" class="dropdown-item"><img src="images/icon-todo.svg" alt="todo-img" class="me-3">Todo List</a></li>
+</ul>
+```
 
-Remember, if you're looking for feedback on your solution, be sure to ask questions when submitting it. The more specific and detailed you are with your questions, the higher the chance you'll get valuable feedback from the community.
+- Using CSS flex to position partner
+flex really useful to space element horizontally. it does good job to layout partner item
 
-## Sharing your solution
+```html
+<div class="partner">
+  <img src="images/client-databiz.svg" alt="databiz" class="partner-img">
+  <img src="images/client-audiophile.svg" alt="audiophile" class="partner-img">
+  <img src="images/client-meet.svg" alt="meet" class="partner-img">
+  <img src="images/client-maker.svg" alt="maker" class="partner-img">
+</div>
+```
 
-There are multiple places you can share your solution:
+```css
+.partner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 90%;
+  margin-top: 40px;
+}
+```
 
-1. Share your solution page in the **#finished-projects** channel of the [Slack community](https://www.frontendmentor.io/slack). 
-2. Tweet [@frontendmentor](https://twitter.com/frontendmentor) and mention **@frontendmentor**, including the repo and live URLs in the tweet. We'd love to take a look at what you've built and help share it around.
-3. Share your solution on other social channels like LinkedIn.
-4. Blog about your experience building your project. Writing about your workflow, technical choices, and talking through your code is a brilliant way to reinforce what you've learned. Great platforms to write on are [dev.to](https://dev.to/), [Hashnode](https://hashnode.com/), and [CodeNewbie](https://community.codenewbie.org/).
+- Using media query after certain breakpoint
 
-We provide templates to help you share your solution once you've submitted it on the platform. Please do edit them and include specific questions when you're looking for feedback. 
+- adding drop shadow to dropdown navigation using box shadow generator
 
-The more specific you are with your questions the more likely it is that another member of the community will give you feedback.
+- reorder html element  using css
+```css
+.flex-item:nth-of-type(1) {order: 2; }
+.flex-item:nth-of-type(2) {order: 1; }
+```
 
-## Got feedback for us?
+### Continued development
 
-We love receiving feedback! We're always looking to improve our challenges and our platform. So if you have anything you'd like to mention, please email hi[at]frontendmentor[dot]io.
+I plan to learn and practice javascript after this. i have quite enough experience in html, css to start javascript.
 
-This challenge is completely free. Please share it with anyone who will find it useful for practice.
+### Useful resources
 
-**Have fun building!** 🚀
+- [Box Shadow generator](https://cssgenerator.org/box-shadow-css-generator.html) - This helped me for creating box shadow around dropdown menu
+- [Bootstrap](https://getbootstrap.com/docs/5.2/getting-started/introduction/) - Bootstrap library helped me making dropdown menu, offcanvas just using css. if i don't use it i have to write javascript for it
+- [Picture element](https://web.dev/learn/design/picture-element/) - This article helped me fix the image not showing using picture tag
+
+## Author
+
+- Website - [Odiesta Shandikarona](https://github.com/Odiesta)
+- Frontend Mentor - [@Odiesta](https://www.frontendmentor.io/profile/Odiesta)
+- Twitter - [@OdiestaS](https://twitter.com/OdiestaS)

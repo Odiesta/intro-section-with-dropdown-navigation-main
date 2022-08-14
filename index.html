@@ -12,74 +12,92 @@
 
   <link rel="stylesheet" href="style.css">
   <title>Frontend Mentor | Intro section with dropdown navigation</title>
-  </style>
 </head>
 
 <body>
   <div class="container-fluid">
     <nav class="navbar navbar-expand-lg row">
-      <div class="container-fluid col-lg-9">
+      <div class="container-fluid">
         <a href="#" class="navbar-brand mx-1">
           <img src="images/logo.svg" alt="logo-img" class="logo-img">
         </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu" aria-controls="navMenu" aria-expanded="false" aria-label="Toggle Navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navMenu" aria-controls="offcanvasNavbar" aria-expanded="false" aria-label="Offcanvas Navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navMenu">
-          <ul class="navbar-nav">
-            <li class="nav-item mx-2">
-              <a href="#" class="nav-link active" aria-current="page">Home</a>
-            </li>
-            <li class="nav-item mx-2">
-              <a href="#" class="nav-link">Features</a>
-            </li>
-            <li class="nav-item mx-2">
-              <a href="#" class="nav-link">Company</a>
-            </li>
-            <li class="nav-item mx-2">
-              <a href="#" class="nav-link">Careers</a>
-            </li>
-            <li class="nav-item mx-2">
-              <a href="#" class="nav-link">About</a>
-            </li>
-          </ul>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="navMenu" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-body">
+            <div class="offcanvas-btn">
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <ul class="navbar-nav col-lg-9">
+              <li class="nav-item mx-2">
+                <a href="#" class="nav-link active" aria-current="page">Home</a>
+              </li>
+              <li class="nav-item dropdown mx-2">
+                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Features
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="#" class="dropdown-item"><img src="images/icon-todo.svg" alt="todo-img" class="me-3">Todo List</a></li>
+                  <li><a href="#" class="dropdown-item"><img src="images/icon-calendar.svg" alt="calendar-img" class="me-3">Calendar</a></li>
+                  <li><a href="#" class="dropdown-item"><img src="images/icon-reminders.svg" alt="reminders-img" class="me-3">Reminders</a></li>
+                  <li><a href="#" class="dropdown-item"><img src="images/icon-planning.svg" alt="planning-img" class="me-3">Planning</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown mx-2">
+                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Company
+                </a>
+                <ul class="dropdown-menu">
+                  <li><a href="#" class="dropdown-item">History</a></li>
+                  <li><a href="#" class="dropdown-item">Our Team</a></li>
+                  <li><a href="#" class="dropdown-item">Blog</a></li>
+                </ul>
+              </li>
+              <li class="nav-item mx-2">
+                <a href="#" class="nav-link">Careers</a>
+              </li>
+              <li class="nav-item mx-2">
+                <a href="#" class="nav-link">About</a>
+              </li>
+            </ul>
+            <div class="login-nav col-lg-3">
+              <ul class="navbar-nav">
+                <li class="nav-item mx-2">
+                  <a href="#" class="nav-link">Login</a>
+                </li>
+                <li class="nav-item mx-2">
+                  <a href="#" class="nav-link btn btn-outline-dark reg-btn">Register</a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-      </div>
-      <div class="col-lg-3">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0 login-nav">
-          <li class="nav-item mx-1">
-            <a href="#" class="nav-link">Login</a>
-          </li>
-          <li class="nav-item mx-2">
-            <a href="#" class="nav-link btn btn-outline-dark reg-btn">Register</a>
-          </li>
-        </ul>
       </div>
     </nav>
     <section class="row top-section">
-      <div class="col-xl-6 title">
+      <div class="col-xl-6 col-lg-6 title flex-item">
         <h1 class="">Make remote work</h1>
 
         <p class="">Get your team in sync, no matter your location. Streamline processes,
         create team rituals, and watch productivity soar.</p>
 
-        <a href="#" class="btn btn-lg btn-dark">Learn more</a>
+        <a href="#" class="btn btn-lg btn-dark learn-more-btn">Learn more</a>
         <div class="partner">
-          <img src="images/client-databiz.svg" alt="databiz">
-          <img src="images/client-audiophile.svg" alt="audiophile">
-          <img src="images/client-meet.svg" alt="meet">
-          <img src="images/client-maker.svg" alt="maker">
+          <img src="images/client-databiz.svg" alt="databiz" class="partner-img">
+          <img src="images/client-audiophile.svg" alt="audiophile" class="partner-img">
+          <img src="images/client-meet.svg" alt="meet" class="partner-img">
+          <img src="images/client-maker.svg" alt="maker" class="partner-img">
         </div>
       </div>
-      <div class="col-xl-6 hero-section">
-        <img src="images/image-hero-desktop.png" alt="hero image" class="hero-img">
+      <div class="col-xl-6 col-lg-6">
+        <picture class="hero-section">
+          <source srcset="images/image-hero-desktop.png" media="(min-width: 768px)" class="hero-img">
+          <source srcset="images/image-hero-mobile.png" media="(max-width: 768px)">
+          <img src="images/image-hero-desktop.png" alt="default image" class="hero-img">
+        </picture>
       </div>
     </section>
-  </div>
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
-    Coded by <a href="https://www.frontendmentor.io/profile/Odiesta">Odiesta Shandikarona</a>.
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
